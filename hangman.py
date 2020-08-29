@@ -122,5 +122,5 @@ def check(countryInquestion, lettercombo):
                 break
         print("")
 
-# todo : stop to game (make a count that subtracts X amount of repated characters in a country)
+
 Main()
