@@ -1,2 +1,2 @@
 # Hangman
-Hangman , Guess the country
+Hangman , Guess the EU country !
