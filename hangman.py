@@ -8,7 +8,7 @@ country_list = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Re
 def Main():
 
     
-    print("Welcome to guess the European country!")
+    print("Welcome to guess the EU country!")
     print("")
     # 205 items in the list (for indexing reference)
     randomNumber = random.randint(1,len(country_list)) #this number will be used to randomly pick a country
