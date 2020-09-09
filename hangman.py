@@ -1,19 +1,38 @@
 import random
 LIVES = 6
-# the following is a list of countries which the game will index randomly
-country_list = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland",
-                "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Luxembourg", "Lithuania", "Malta",
-                "Netherlands", "Poland", "Portugal", "Romania", "Slovak Republic", "Slovenia", "Spain", "Sweden", "United Kingdom"]
-
+# the following is a list of countries, fruits and superheros which the game will index randomly
+# 0th item = country , 1st item = fruits , 2nd = Superheros
+Hangman = [["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland",
+            "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Luxembourg", "Lithuania", "Malta",
+            "Netherlands", "Poland", "Portugal", "Romania", "Slovak Republic", "Slovenia", "Spain", "Sweden", "United Kingdom"],
+           ['pear', 'mango', 'apple', 'banana', 'apricot', 'pineapple','cantaloupe', 'grapefruit','jackfruit','papaya'],
+           ['hawkeye', 'robin', 'Galactus', 'thor', 'mystique', 'superman', 'deadpool', 'vision', 'sandman', 'aquaman']]
 def Main():
 
     
-    print("Welcome to guess the EU country!")
+    print("Welcome to Hangman !")
     print("")
-    # 205 items in the list (for indexing reference)
-    randomNumber = random.randint(1,len(country_list)) #this number will be used to randomly pick a country
 
-    countryQuestion = Country_To_Guess(randomNumber) # this stores the country that is chosen for the game
+    category = random.randint(1, 3)
+
+    if category == 1:
+            print("Guess the EU Country !")
+            length = len(Hangman[0])
+
+    if category == 2:
+            print("Guess the Fruit !")
+            length = len(Hangman[1])
+
+    if category == 3:
+            print("Guess the SuperHero")
+            length = len(Hangman[2])
+
+
+
+    word = Hangman[category - 1][random.randint(1,length)]
+
+
+    countryQuestion = word
 
     # the following will display to the user the amount of letters the country to guess has.
     letter_count = letter_counter(countryQuestion)
@@ -32,12 +51,6 @@ def Main():
 
     check(countryQuestion,lettercombo)
 
-
-
-
-def Country_To_Guess(randomNumber):
-    country_choice = country_list[randomNumber]
-    return country_choice
 
 def letter_counter(countryQuestion):
     letter_count = 0
@@ -96,5 +109,7 @@ def check(countryInquestion, lettercombo):
                 break
         print("")
 
+    if y == 0:
+        print("The word is " + countryInquestion)
 
 Main()
