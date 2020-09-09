@@ -1,2 +1,2 @@
 # Hangman
-Hangman , Guess the EU country !
+Hangman , Guess the country, fruit and superhero !!
