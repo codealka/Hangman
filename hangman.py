@@ -36,7 +36,7 @@ def Main():
 
     # the following will display to the user the amount of letters the country to guess has.
     letter_count = letter_counter(countryQuestion)
-    print("Your Country has " + str(letter_count) + " letters")
+    print("Your word has " + str(letter_count) + " letters")
     for i in countryQuestion:
         if i == " ":
             print(i , end="")
